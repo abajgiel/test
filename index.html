@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una hermosa página de Hello World con diseño premium y moderno.">
+    <title>Hello World - Premium Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            --glow-color: rgba(129, 140, 248, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient background glow */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            top: 20%;
+            left: 20%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, transparent 70%);
+            bottom: 20%;
+            right: 20%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+                        0 0 50px var(--glow-color);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
+                        0 0 70px rgba(129, 140, 248, 0.25);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(129, 140, 248, 0.1);
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #a5b4fc;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            background: var(--accent-gradient);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(129, 140, 248, 0.3);
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(129, 140, 248, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <main class="container" id="main-content">
+        <article class="card" id="welcome-card">
+            <span class="badge" id="welcome-badge">Inicio</span>
+            <h1 id="main-heading">Hello World</h1>
+            <p id="welcome-description">Bienvenido a una página web moderna, minimalista y diseñada con una estética premium para cautivar tus sentidos.</p>
+            <button class="btn" id="explore-button" onclick="alert('¡Hola de nuevo!')">Explorar</button>
+        </article>
+    </main>
+</body>
+</html>
